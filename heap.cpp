@@ -28,9 +28,8 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
       if(size - 1 >= left_p && size - 1 >= right_p){
         LOG("left_p: " << left_p << ", right_p: " << right_p << ", vdata[curr]: " << vdata[curr] << ", vdata[right_p]: " << vdata[right_p] << ", vdata[left_p]: " << vdata[left_p]);
 
-        if(vdata[curr] > vdata[right_p] || vdata[curr] > vdata[left_p]){
-
-          int min_val = std::min(vdata[right_p] , vdata[left_p]);
+        int min_val = std::min(vdata[right_p], vdata[left_p]);
+        if(vdata[curr] > min_val){
           LOG("For loop iteration: " << (start_p - index) << ", index: " << index << ", min_val: " << min_val);
           int temp = vdata[curr];
 
@@ -40,14 +39,13 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
             curr = right_p;
             LOG("curr updated to " << curr << " (right child)");
 
-          }else if (min_val == vdata[left_p]){
+          }else{
             vdata[curr] = vdata[left_p];
             vdata[left_p] = temp;
             curr = left_p;
             LOG("curr updated to " << curr << " (left child)");
           }
-        }
-        if(vdata[curr] < vdata[left_p] && vdata[curr] < vdata[right_p]){
+        } else {
             break;
         }
 
