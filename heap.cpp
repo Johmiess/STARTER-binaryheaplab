@@ -84,10 +84,10 @@ void Heap::push(int value){
   LOG("vdata size: " << vdata.size());
   int values_index = vdata.size() - 1;
   int values_parent_index = (std::floor(values_index - 1) / 2);
-  cout << "values_parent_indexf: " << values_parent_index << ", values_index: " << values_index << std::endl;
+  // cout << "values_parent_indexf: " << values_parent_index << ", values_index: " << values_index << std::endl;
   
   while(vdata[values_parent_index] > vdata[values_index]){
-  cout << "values_parent_index: " << values_parent_index << ", values_index: " << values_index << std::endl;
+  // cout << "values_parent_index: " << values_parent_index << ", values_index: " << values_index << std::endl;
     vdata[values_index] = vdata[values_parent_index];
     vdata[values_parent_index] = value;
     values_index = values_parent_index;
