@@ -4,7 +4,7 @@
 #include "heap.h"
 #include <iostream>
 #include <cmath>
-#define DEBUG true
+#define DEBUG false
 #define LOG(x) if (DEBUG) { std::cout << "[DEBUG] " << x << std::endl; }
 
 using std::cout;
